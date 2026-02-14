@@ -1,2 +1,3 @@
 static/app_password.txt
 .venv
+*.venv
