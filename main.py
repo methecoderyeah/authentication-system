@@ -19,7 +19,8 @@ class Base(DeclarativeBase):
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
-app.config['SECRET_KEY'] = 'totally secret'
+with open('static/app_password.txt') as file:
+    app.config['SECRET_KEY'] = file.read()
 # CREATE TABLE IN DB
 
 
